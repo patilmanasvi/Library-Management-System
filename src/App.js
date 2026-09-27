@@ -44,6 +44,8 @@ function App() {
           </div>
         </div>
       </section>
+      {/* Book count */}
+      <p className="book-count">{books.length} books available</p>
 
       {/* About the Library */}
       <section className="about-section">
