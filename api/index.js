@@ -24,7 +24,7 @@ app.use('/api/borrows', borrowRoutes);
 app.use('/api/payments', paymentRoutes);
 
 // Fallback for SPA routing
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
