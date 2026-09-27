@@ -8,7 +8,7 @@ const bookRoutes     = require("./routes/books");
 const authRoutes     = require("./routes/auth");
 const borrowRoutes   = require("./routes/borrows");
 const paymentRoutes  = require("./routes/payments");
-const { initReminderCron } = require("./services/reminderCron");
+// Removed initReminderCron import for Vercel serverless deployment
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(__dirname));
 
 // Initialize daily email reminder cron job
-initReminderCron();
+// initReminderCron(); // disabled for Vercel serverless
 
 app.use("/api/books",    bookRoutes);
 app.use("/api/auth",     authRoutes);
